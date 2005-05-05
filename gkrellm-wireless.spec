@@ -1,5 +1,5 @@
 Summary:	plugins monitors the signal quality of your wireless networking card
-Summary(pl):	plugin monitoruj±cy jako¶c sygna³u karty bezprzewodowej
+Summary(pl):	plugin monitoruj±cy jako¶æ sygna³u karty bezprzewodowej
 Name:		gkrellm-wireless
 Version:	2.0.3
 Release:	1
