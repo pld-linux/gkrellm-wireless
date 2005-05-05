@@ -16,24 +16,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This plugin monitors the signal quality of your wireless networking
-card (if it's driver supports the linux wireless extension api or you
-use Freebsd's wi0 interface).
+card (if it's driver supports the Linux wireless extension API).
 
 %description -l pl
 Ta wtyczka umo¿liwia monitorowanie jako¶ci sygna³u karty
-bezprzewodowej.
+bezprzewodowej (je¶li jej sterownik obs³uguje linuksowe rozszerzenie
+API dla kart bezprzewodowych).
 
 %prep
 %setup -q -n gkrellmwireless
 
 %build
-# typo - two different variables for optflags
-%{__make} 
+%{__make} \
+	CC="%{__cc} \$(FLAGS)" \
+	FLAGS="%{rpmcflags} -Wall -fPIC \$(GTK_CFLAGS) \$(GKRELLM_INCLUDE)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -D wireless.so  $RPM_BUILD_ROOT%{_libdir}/gkrellm2/plugins/wireless.so
+install -D wireless.so $RPM_BUILD_ROOT%{_libdir}/gkrellm2/plugins/wireless.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
