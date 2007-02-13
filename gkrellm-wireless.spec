@@ -1,5 +1,5 @@
 Summary:	Plugin monitoring the signal quality of your wireless networking card
-Summary(pl.UTF-8):   Wtyczka monitorująca jakość sygnału karty bezprzewodowej
+Summary(pl.UTF-8):	Wtyczka monitorująca jakość sygnału karty bezprzewodowej
 Name:		gkrellm-wireless
 Version:	2.0.3
 Release:	1
